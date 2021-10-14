@@ -28,12 +28,12 @@ class Library {
         this.books.forEach((book) => {
             let item = document.createElement("DIV");
             item.classList.add("book");
+            let title = document.createElement("DIV");
+            title.classList.add("book-title");
+            title.textContent = `${book.title}`;
             let author = document.createElement("DIV");
             author.classList.add("book-author");
             author.textContent = `by ${book.author}`;
-            let title = document.createElement("DIV");
-            author.classList.add("book-title");
-            title.textContent = `${book.title}`;
             item.appendChild(title);
             item.appendChild(author);
             library === null || library === void 0 ? void 0 : library.appendChild(item);
@@ -41,7 +41,7 @@ class Library {
     }
 }
 let lib = new Library();
-// Testing:
+// Test Content:
 let book1 = new Book("its a story!!", "steve stevenson");
 let book2 = new Book("super romance", "miaow ma mia");
 let book3 = new Book("fantasy fighters", "dave le douche");
