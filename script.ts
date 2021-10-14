@@ -27,13 +27,25 @@ class Library {
   }
 
   showAll() {
-    let parent: HTMLElement | null = document.getElementById("library");
+    let library: HTMLElement | null = document.querySelector(".library");
+    console.log(library);
 
     this.books.forEach((book) => {
-      let p: HTMLElement = document.createElement("P");
-      p.classList.add("book");
-      p.textContent = `${book.author} - ${book.title}`;
-      parent?.appendChild(p);
+      let item: HTMLElement = document.createElement("DIV");
+      item.classList.add("book");
+
+      let author = document.createElement("DIV");
+      author.classList.add("book-author");
+      author.textContent = `by ${book.author}`;
+
+      let title = document.createElement("DIV");
+      author.classList.add("book-title");
+      title.textContent = `${book.title}`;
+
+      item.appendChild(title);
+      item.appendChild(author);
+
+      library?.appendChild(item);
     });
   }
 }

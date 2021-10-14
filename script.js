@@ -23,12 +23,20 @@ class Library {
         // console.log(book, "added...");
     }
     showAll() {
-        let parent = document.getElementById("library");
+        let library = document.querySelector(".library");
+        console.log(library);
         this.books.forEach((book) => {
-            let p = document.createElement("P");
-            p.classList.add("book");
-            p.textContent = `${book.author} - ${book.title}`;
-            parent === null || parent === void 0 ? void 0 : parent.appendChild(p);
+            let item = document.createElement("DIV");
+            item.classList.add("book");
+            let author = document.createElement("DIV");
+            author.classList.add("book-author");
+            author.textContent = `by ${book.author}`;
+            let title = document.createElement("DIV");
+            author.classList.add("book-title");
+            title.textContent = `${book.title}`;
+            item.appendChild(title);
+            item.appendChild(author);
+            library === null || library === void 0 ? void 0 : library.appendChild(item);
         });
     }
 }
