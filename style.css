@@ -22,17 +22,49 @@ html {
   box-sizing: border-box;
 }
 
-.header {
-  padding: 0.5em;
+input[type="submit"] {
+  display: block;
+}
 
+button,
+input[type="submit"] {
+  outline: 0;
+  border: 0;
+  border-radius: var(--radius1);
+  padding: 0.5em 1em;
+  font-weight: 700;
+  background-color: wheat;
+}
+
+button:active {
+  transform: translate(1px, 1px);
+}
+
+.hidden {
+  display: none;
+}
+
+.header {
+  padding: 0.5em 1.5em;
   background-color: chocolate;
+
+  display: flex;
+  align-items: center;
+}
+
+.header > .header-title {
   color: var(--font_dark);
   font-size: 1.5rem;
   font-weight: 600;
 }
 
+.header > menu {
+  margin-left: auto;
+}
+
 .library {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .book {

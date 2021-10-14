@@ -1,4 +1,4 @@
-class Book {
+export class Book {
   title: string;
   author: string;
 
@@ -8,7 +8,7 @@ class Book {
   }
 }
 
-class Library {
+export class Library {
   books: Array<Book> = [];
 
   list() {
@@ -18,17 +18,11 @@ class Library {
   }
 
   add(book: Book) {
-    if (!book) {
-      console.log("no Book specified");
-      return;
-    }
     this.books.push(book);
-    // console.log(book, "added...");
   }
 
   showAll() {
     let library: HTMLElement | null = document.querySelector(".library");
-    console.log(library);
 
     this.books.forEach((book) => {
       let item: HTMLElement = document.createElement("DIV");
@@ -49,16 +43,3 @@ class Library {
     });
   }
 }
-
-let lib = new Library();
-
-// Test Content:
-let book1 = new Book("its a story!!", "steve stevenson");
-let book2 = new Book("super romance", "miaow ma mia");
-let book3 = new Book("fantasy fighters", "dave le douche");
-
-lib.add(book1);
-lib.add(book2);
-lib.add(book3);
-
-lib.showAll();

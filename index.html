@@ -7,14 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
-    <script defer src="./script.js"></script>
+    <script defer type="module" src="./scripts/script.js"></script>
 
     <title>the_odin_project</title>
 </head>
 
 <body>
-    <header class="header">the_odin_library</header>
+    <header class="header">
+        <div class="header-title">the_odin_library</div>
+        <menu>
+            <button id="header-btn-add">NEW...</button>
+        </menu>
+    </header>
     <div class="library"></div>
+
+
+    <!-- HIDDEN MODULES -->
+    <div class="modulo-add hidden">
+        <form>
+            <label for="title">Title:</label><br>
+            <input type="text" name="title"><br>
+
+            <label for="author">Author:</label><br>
+            <input type="text" name="author"><br>
+
+            <label for="read">Read?</label><br>
+            <input name="read" type="checkbox">
+
+            <input type="submit" value="ADD">
+        </form>
+    </div>
+
 </body>
 
 </html>
