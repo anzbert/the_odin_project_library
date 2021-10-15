@@ -16,6 +16,7 @@ function closeModuloAdd() {
 }
 
 HEADER_BTN_ADD?.addEventListener("click", openModuloAdd);
+MODULO_LOCKSCREEN?.addEventListener("click", closeModuloAdd);
 
 MODULO_ADD_BTN_ADD?.addEventListener("click", (event) => {
   event.preventDefault();

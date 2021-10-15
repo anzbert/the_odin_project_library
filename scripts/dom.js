@@ -13,6 +13,7 @@ function closeModuloAdd() {
     MODULO_ADD === null || MODULO_ADD === void 0 ? void 0 : MODULO_ADD.classList.toggle("hidden", true);
 }
 HEADER_BTN_ADD === null || HEADER_BTN_ADD === void 0 ? void 0 : HEADER_BTN_ADD.addEventListener("click", openModuloAdd);
+MODULO_LOCKSCREEN === null || MODULO_LOCKSCREEN === void 0 ? void 0 : MODULO_LOCKSCREEN.addEventListener("click", closeModuloAdd);
 MODULO_ADD_BTN_ADD === null || MODULO_ADD_BTN_ADD === void 0 ? void 0 : MODULO_ADD_BTN_ADD.addEventListener("click", (event) => {
     event.preventDefault();
     let form = document.getElementById("modulo-add-form");
