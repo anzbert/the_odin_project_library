@@ -34,7 +34,7 @@ input[type="submit"] {
   border-radius: var(--radius1);
   padding: 0.5em 1em;
   font-weight: 700;
-  background-color: wheat;
+  background-color: tan;
 }
 
 button:active,
@@ -84,6 +84,11 @@ input[type="submit"]:active {
   background-color: antiquewhite;
   border-radius: var(--radius1);
   font-size: 1.2rem;
+}
+
+.book > .book-btn-delete {
+  display: block;
+  margin-left: auto;
 }
 
 #modulo-lockscreen {
