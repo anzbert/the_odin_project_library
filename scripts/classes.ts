@@ -1,8 +1,13 @@
 export class Book {
   title: string;
   author: string;
+  read: boolean;
 
-  constructor(newTitle = "unknown_title", newAuthor = "unknown_author") {
+  constructor(
+    newTitle = "unknown_title",
+    newAuthor = "unknown_author",
+    read = false
+  ) {
     let checkLength = (string: string) => {
       if (string.length === 0) {
         return "unknown";
@@ -11,6 +16,7 @@ export class Book {
 
     this.title = checkLength(newTitle);
     this.author = checkLength(newAuthor);
+    this.read = read;
   }
 }
 
