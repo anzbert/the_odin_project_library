@@ -1,5 +1,6 @@
 :root {
   --grey1: hsl(0, 0%, 15%);
+  --grey2: hsl(0, 10%, 40%);
   --font_bright: hsl(0, 0%, 85%);
   --font_dark: hsl(0, 20%, 10%);
   --radius1: 0.5em;
@@ -36,7 +37,8 @@ input[type="submit"] {
   background-color: wheat;
 }
 
-button:active {
+button:active,
+input[type="submit"]:active {
   transform: translate(1px, 1px);
 }
 
@@ -82,4 +84,23 @@ button:active {
   background-color: antiquewhite;
   border-radius: var(--radius1);
   font-size: 1.2rem;
+}
+
+#modulo-lockscreen {
+  background-color: hsla(0, 0%, 0%, 0.5);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  /* top: 0; */
+}
+
+.modulo {
+  background-color: var(--grey2);
+  margin: auto;
+  width: fit-content;
+  padding: 0.5em;
+  border-radius: var(--radius1);
+}
+
+.modulo > input[type="submit"] {
 }

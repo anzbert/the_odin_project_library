@@ -19,24 +19,29 @@
             <button id="header-btn-add">NEW...</button>
         </menu>
     </header>
-    <div class="library"></div>
+
 
 
     <!-- HIDDEN MODULES -->
-    <div class="modulo-add hidden">
-        <form>
-            <label for="title">Title:</label><br>
-            <input type="text" name="title"><br>
+    <div id="modulo-lockscreen" class="hidden">
+        <div id="modulo-add" class="modulo hidden">
+            <form id="modulo-add-form">
+                <label for="title">Title:</label><br>
+                <input type="text" name="title"><br>
 
-            <label for="author">Author:</label><br>
-            <input type="text" name="author"><br>
+                <label for="author">Author:</label><br>
+                <input type="text" name="author"><br>
 
-            <label for="read">Read?</label><br>
-            <input name="read" type="checkbox">
+                <!-- <label for="read">Read?</label><br>
+                <input name="read" type="checkbox"> -->
 
-            <input type="submit" value="ADD">
-        </form>
+                <input type="submit" id="modulo-add-btn-add" value="ADD">
+            </form>
+        </div>
     </div>
+
+
+    <div class="library"></div>
 
 </body>
 

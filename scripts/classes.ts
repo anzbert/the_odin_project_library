@@ -3,8 +3,14 @@ export class Book {
   author: string;
 
   constructor(newTitle = "unknown_title", newAuthor = "unknown_author") {
-    this.title = newTitle;
-    this.author = newAuthor;
+    let checkLength = (string: string) => {
+      if (string.length === 0) {
+        return "unknown";
+      } else return string;
+    };
+
+    this.title = checkLength(newTitle);
+    this.author = checkLength(newAuthor);
   }
 }
 
@@ -21,8 +27,10 @@ export class Library {
     this.books.push(book);
   }
 
-  showAll() {
+  refresh() {
     let library: HTMLElement | null = document.querySelector(".library");
+
+    library?.replaceChildren();
 
     this.books.forEach((book) => {
       let item: HTMLElement = document.createElement("DIV");

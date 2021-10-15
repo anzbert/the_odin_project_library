@@ -1,7 +1,14 @@
 export class Book {
     constructor(newTitle = "unknown_title", newAuthor = "unknown_author") {
-        this.title = newTitle;
-        this.author = newAuthor;
+        let checkLength = (string) => {
+            if (string.length === 0) {
+                return "unknown";
+            }
+            else
+                return string;
+        };
+        this.title = checkLength(newTitle);
+        this.author = checkLength(newAuthor);
     }
 }
 export class Library {
@@ -16,8 +23,9 @@ export class Library {
     add(book) {
         this.books.push(book);
     }
-    showAll() {
+    refresh() {
         let library = document.querySelector(".library");
+        library === null || library === void 0 ? void 0 : library.replaceChildren();
         this.books.forEach((book) => {
             let item = document.createElement("DIV");
             item.classList.add("book");
