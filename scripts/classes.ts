@@ -31,10 +31,26 @@ export class Library {
 
   add(book: Book) {
     this.books.push(book);
+    this.saveToLocalstorage();
   }
 
   removeByIndex(bookIndex: number) {
     this.books.splice(bookIndex, 1);
+    this.saveToLocalstorage();
+  }
+
+  saveToLocalstorage() {
+    let dataToStore = JSON.stringify(this.books);
+    localStorage.setItem("library", dataToStore);
+  }
+  getFromLocalstorage() {
+    let storedData: string | null = localStorage.getItem("library");
+    if (storedData !== null) {
+      let parsedData = JSON.parse(storedData) as Array<Book>;
+      this.books = parsedData;
+      this.refresh();
+    }
+    this.refresh();
   }
 
   refresh() {
@@ -54,6 +70,21 @@ export class Library {
       author.classList.add("book-author");
       author.textContent = `by ${book.author}`;
 
+      let readCheckbox = document.createElement("INPUT") as HTMLInputElement;
+      readCheckbox.classList.add("book-read-checkbox");
+      readCheckbox.type = "checkbox";
+      readCheckbox.name = "read-checkbox";
+      readCheckbox.id = `book-${index}`;
+      readCheckbox.checked = book.read;
+      readCheckbox.addEventListener("change", () => {
+        book.read = readCheckbox.checked;
+        this.saveToLocalstorage();
+      });
+
+      // let label = document.createElement("LABEL") as HTMLLabelElement;
+      // label.htmlFor = `book-${index}`;
+      // label.appendChild(document.createTextNode("read"));
+
       let btnDelete = document.createElement("BUTTON");
       btnDelete.classList.add("book-btn-delete");
       btnDelete.textContent = "DELETE";
@@ -63,7 +94,9 @@ export class Library {
       });
 
       item.appendChild(title);
+      title.appendChild(readCheckbox);
       item.appendChild(author);
+      // item.appendChild(label);
       item.appendChild(btnDelete);
 
       library?.appendChild(item);

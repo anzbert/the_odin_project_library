@@ -85,6 +85,9 @@ input[type="submit"]:active {
   border-radius: var(--radius1);
   font-size: 1.2rem;
 }
+.book-read-checkbox {
+  filter: hue-rotate(180deg);
+}
 
 .book > .book-btn-delete {
   display: block;

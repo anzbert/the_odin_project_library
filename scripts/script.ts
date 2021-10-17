@@ -8,8 +8,9 @@ let book1 = new Book("its a story!!", "steve stevenson", false);
 let book2 = new Book("super romance", "miaow ma mia", true);
 let book3 = new Book("fantasy fighters", "dave le douche", true);
 
-lib.add(book1);
-lib.add(book2);
-lib.add(book3);
+// lib.add(book1);
+// lib.add(book2);
+// lib.add(book3);
+// lib.saveToLocalstorage();
 
-lib.refresh();
+lib.getFromLocalstorage();
